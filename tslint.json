@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "curly": true,
+    "no-any": false,
+    "quotemark": [ true, "single", "jsx-double" ],
+    "no-implicit-dependencies": [true, "dev", ["src"]],
+    "typedef": [ true, "parameter", "property-declaration" ],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "member-access": false,
+    "no-console": true,
+    "indent": [true, "spaces", 2]
+  }
+}

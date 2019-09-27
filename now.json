@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "env": {
+    "CONTENTFUL_TOKEN":"@contentful_token",
+    "CONTENTFUL_SPACE_ID":"@contentful_space_id",
+    "GA_ID": "@ga_id"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "routes": [
+    {"src": "/ehdot.html", "dest": "/ehdot"} 
+  ]
+}
