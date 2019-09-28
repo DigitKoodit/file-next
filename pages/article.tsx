@@ -8,7 +8,7 @@ import { fetchArticle } from '../core/api';
 //     const data = fetchArticle(route);
 //     callback(data);
 //   }, []);
-  
+
 // }
 
 const Article = () => {
@@ -16,13 +16,7 @@ const Article = () => {
   // const [ state, setState ] = React.useState(null);
   // const articleTitle = router.query.title;
   // dataFetcher(articleTitle as string, setState);
-  return (
-    <div>
-      {JSON.stringify(router.query, null, 2)}
-    </div>
-  );
+  return <div>{JSON.stringify(router.query, null, 2)}</div>;
 };
-
-
 
 export default propLoader(Article, fetchArticle());

@@ -2,8 +2,8 @@ export const colors = {
 };
 
 export const fonts = {
-  sans: 'Notable, sans-serif',
-  serif: 'Oxygen, serif',
+  sans: 'Acme, sans-serif',
+  serif: 'Bree serif, serif',
 };
 
 export const shadows = {

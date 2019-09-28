@@ -23,14 +23,14 @@ export default class MyDocument extends Document<props> {
       <Html lang="en">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css?family=Notable|Oxygen&display=swap"
+            href="https://fonts.googleapis.com/css?family=Acme|Bree+Serif&display=swap"
             rel="stylesheet"
           />
           {this.props.styleTags}
         </Head>
         <Body>
           <Main />
-          <NextScript style={{ flex: 1 }} />
+          <NextScript />
         </Body>
       </Html>
     );

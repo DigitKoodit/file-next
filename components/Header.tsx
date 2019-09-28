@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { fonts } from '../styles/stylesheet';
 
 const Header = styled.header`
   width: 100%;
@@ -7,4 +8,26 @@ const Header = styled.header`
   text-align: center;
 `;
 
-export default ({ children }) => <Header>{children}</Header>;
+export interface NaviItem {
+  href: string;
+  label: string;
+  divider?: string;
+}
+
+const NavigationLink = styled.a`
+  padding: 1rem;
+  font-family: ${fonts.sans};
+`;
+
+const naviTree: NaviItem[] = [
+  { href: '/index', label: 'Koti' },
+  { href: '/artikkelit', label: 'Artikkelit' }
+];
+
+export default () => (
+  <Header>
+    {naviTree.map(item => (
+      <NavigationLink key={item.label}>{item.label}</NavigationLink>
+    ))}
+  </Header>
+);

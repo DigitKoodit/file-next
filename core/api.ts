@@ -33,21 +33,23 @@ export const fetchAllArticles = () => async () => {
     });
 };
 
-export const fetchArticle = (articleId: string) => async () => createApi()
-  .fetchContentfulData(ARTICLE_TYPE)
-  .then(data => {
-    const correct = data && data.find((item: any) => item.fields.id === articleId);
-    if (!correct) {
+export const fetchArticle = (articleId: string) => async () =>
+  createApi()
+    .fetchContentfulData(ARTICLE_TYPE)
+    .then(data => {
+      const correct =
+        data && data.find((item: any) => item.fields.id === articleId);
+      if (!correct) {
+        return {
+          type: 'error',
+          data: null
+        };
+      }
       return {
-        type: 'error',
-        data: null
+        type: 'success',
+        data: correct
       };
-    }
-    return {
-      type: 'success',
-      data: correct
-    };
-  });
+    });
 
 export const fetchPageData = pageId => async () =>
   createApi()

@@ -45,7 +45,7 @@ export const Html = styled.html`
   padding: 0px;
   margin: 0px;
   & * {
-    font-family: ${fonts.paragraph};
+    font-family: ${fonts.serif};
   }
   & * {
     box-sizing: border-box;
@@ -96,7 +96,6 @@ export const PlaceHolder = styled.p`
   opacity: 0;
   width: 100%;
   padding: 40px;
-  font-family: ${fonts.secondary};
   font-size: 1.1rem;
   text-align: center;
   max-width: 100%;

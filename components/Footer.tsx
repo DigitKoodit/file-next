@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-const quotes = require('../static/quotes.json');
-
 const Footer = styled.footer`
   padding: 20px;
   width: 100%;

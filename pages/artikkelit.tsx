@@ -32,14 +32,16 @@ const Short = styled.div`
 
 const Articles: React.SFC<any> = (props: Props) => {
   console.log(props);
-  return <React.Fragment>
-    {props.data.map(item => (
-      <Short key={item.id}>
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
-      </Short>
-    ))}
-  </React.Fragment>;
+  return (
+    <React.Fragment>
+      {props.data.map(item => (
+        <Short key={item.id}>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </Short>
+      ))}
+    </React.Fragment>
+  );
 };
 
 const pageLoader = fetchAllArticles();
