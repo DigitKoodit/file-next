@@ -28,17 +28,18 @@ export const fetchAllArticles = () => async () => {
   return createApi()
     .fetchContentfulData(ARTICLE_TYPE)
     .then((data: any) => {
-      console.log(data);
       return { data: data.map(item => ({ ...item.fields })) };
     });
 };
 
-export const fetchArticle = (articleId: string) => async () =>
-  createApi()
+export const fetchArticle = () => async (options: any) => {
+  const { pathname, query } = options;
+  console.log(query, pathname);
+  return createApi()
     .fetchContentfulData(ARTICLE_TYPE)
     .then(data => {
       const correct =
-        data && data.find((item: any) => item.fields.id === articleId);
+        data && data.find((item: any) => item.fields.id === query.id);
       if (!correct) {
         return {
           type: 'error',
@@ -47,16 +48,7 @@ export const fetchArticle = (articleId: string) => async () =>
       }
       return {
         type: 'success',
-        data: correct
+        data: correct.fields
       };
     });
-
-export const fetchPageData = pageId => async () =>
-  createApi()
-    .fetchContentfulData('page')
-    .then((data: any) => {
-      const pageData = data
-        .map(item => item.fields)
-        .find(item => item.id.toLowerCase() === pageId);
-      return { ...pageData };
-    });
+};

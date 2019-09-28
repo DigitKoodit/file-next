@@ -1,22 +1,21 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
-import propLoader from '../core/propLoader';
+// import Markdown from '../components/Styled/Markdown';
 import { fetchArticle } from '../core/api';
+import propLoader from '../core/propLoader';
 
-// async function dataFetcher(route: string, callback: (data: any) => void) {
-//   React.useEffect(() => {
-//     const data = fetchArticle(route);
-//     callback(data);
-//   }, []);
+interface Props {
+  type: 'error' | 'success';
+  data: any;
+}
 
-// }
-
-const Article = () => {
-  const router = useRouter();
-  // const [ state, setState ] = React.useState(null);
-  // const articleTitle = router.query.title;
-  // dataFetcher(articleTitle as string, setState);
-  return <div>{JSON.stringify(router.query, null, 2)}</div>;
+const Article = (props: Props) => {
+  console.log(props.data);
+  return (
+    <div>
+      {JSON.stringify(props.data.content, null, 2)}
+      {/* <Markdown content={props.data.content} /> */}
+    </div>
+  );
 };
 
 export default propLoader(Article, fetchArticle());

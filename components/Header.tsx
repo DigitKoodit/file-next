@@ -27,7 +27,9 @@ const naviTree: NaviItem[] = [
 export default () => (
   <Header>
     {naviTree.map(item => (
-      <NavigationLink key={item.label}>{item.label}</NavigationLink>
+      <NavigationLink href={item.href} key={item.label}>
+        {item.label}
+      </NavigationLink>
     ))}
   </Header>
 );

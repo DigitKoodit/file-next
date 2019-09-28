@@ -2,11 +2,12 @@ import * as React from 'react';
 import Layout from '../components/Layout';
 import { Page } from '../components/Styled/Common';
 
-const propLoader = (Component: any, loader) => {
+const propLoader = (Component: any, loader?: (options: any) => void) => {
   return class extends React.Component<any, any> {
-    static getInitialProps() {
-      console.log('loader', loader);
-      return loader();
+    static getInitialProps(options: any) {
+      if (loader) {
+        return loader(options);
+      }
     }
     render() {
       return (
