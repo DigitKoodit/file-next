@@ -65,7 +65,6 @@ const Articles: React.SFC<any> = (props: Props) => {
     const articleFilter = filterArticleBy(filter);
     setFilteredData(props.data.filter(articleFilter));
   }, [filter]);
-  console.log(props);
   return (
     <React.Fragment>
       <SearchField
