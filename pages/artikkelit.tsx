@@ -3,17 +3,11 @@ import propLoader from '../core/propLoader';
 import { fetchAllArticles } from '../core/api';
 import styled from 'styled-components';
 import { fonts } from '../styles/stylesheet';
-import { RichTextContent } from 'contentful';
+import { Entry } from 'contentful';
+import { ArticleObject } from 'types';
 
 interface Props {
-  data: FieldObject[];
-}
-
-interface FieldObject {
-  id: string;
-  title: string;
-  description: string;
-  content: RichTextContent;
+  data: Entry<ArticleObject>[];
 }
 
 const Short = styled.div`
@@ -33,8 +27,8 @@ const Short = styled.div`
 
 function filterArticleBy(str: string) {
   const lowerCased = str.toLowerCase();
-  return (target: FieldObject) => {
-    const { content, description, title } = target;
+  return (target: Entry<ArticleObject>) => {
+    const { content, description, title } = target.fields;
     if (!str) return true;
     // This is a bit of a cheat to read the deep contentful-data.
     const stringifiedContent = content && JSON.stringify(content);
@@ -59,12 +53,20 @@ const SearchField = (props: SearchFieldProps) => {
 };
 
 const Articles: React.SFC<any> = (props: Props) => {
+  console.log('Props in article', props.data);
   const [filter, setFilter] = React.useState('');
-  const [filteredData, setFilteredData] = React.useState(props.data);
+  const [filteredData, setFilteredData] = React.useState([]);
   React.useEffect(() => {
     const articleFilter = filterArticleBy(filter);
-    setFilteredData(props.data.filter(articleFilter));
+    console.log('Resetting this', props.data);
+    if (!!props.data) {
+      console.log(props.data);
+      setFilteredData(props.data.filter(articleFilter));
+    }
   }, [filter]);
+
+  console.log();
+
   return (
     <React.Fragment>
       <SearchField
@@ -73,9 +75,10 @@ const Articles: React.SFC<any> = (props: Props) => {
         }
       />
       {filteredData.map(item => (
-        <Short key={item.id}>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
+        <Short key={item.sys.id}>
+          <h3>{item.fields.title}</h3>
+          <p>{item.fields.description}</p>
+          <a href={`/article?id=${item.sys.id}`}>Linkki juttuun</a>
         </Short>
       ))}
     </React.Fragment>

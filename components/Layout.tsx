@@ -41,7 +41,6 @@ class Layout extends React.Component<Props> {
           />
         </Head>
         <Content>
-          asdf
           <Page>
             <Header />
             {children}

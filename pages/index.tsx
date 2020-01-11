@@ -1,13 +1,15 @@
 import * as React from 'react';
-import Markdown from '../components/Styled/Markdown';
+import propLoader from '../core/propLoader';
+import { fetchFirstX } from '../core/api';
 
 const Index: React.SFC<any> = (props: any) => {
-  const { text } = props;
+  const { data } = props;
+  console.log(props);
   return (
     <React.Fragment>
-      <Markdown content={text} />
+      <p>{JSON.stringify(data, null, 2)}</p>
     </React.Fragment>
   );
 };
 
-export default Index;
+export default propLoader(Index, fetchFirstX(3));

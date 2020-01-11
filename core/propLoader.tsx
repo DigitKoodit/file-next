@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 
 const propLoader = (Component: any, loader?: (options: any) => void) => {
   return class extends React.Component<any, any> {
-    static getInitialProps(options: any) {
+    static getInitialProps(options) {
       if (loader) {
         return loader(options);
       }
