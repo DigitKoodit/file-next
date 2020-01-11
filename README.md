@@ -13,9 +13,13 @@ The application is built using `Next.js` and used `Contentful` as it's CMS.
 
 ## Development
 
-A set of secrets are needed to run the application and get data. Get them from the maintainer and include them in a `.env` file.
+A set of secrets are needed to run the application and get data. Get them from
+the maintainer and include them in a `.env` file. Replace with actual tokens,
+these are used automatically by dotenv.
 
 ```bash
-export CONTENTFUL_TOKEN=""
-export CONTENTFUL_SPACE_ID=""
+CONTENTFUL_SPACE_ID="id"
+CONTENTFUL_TOKEN="token"
+CONTENTFUL_DRAFT_TOKEN="token" # Used for
+GA_ID="google analytics"
 ```

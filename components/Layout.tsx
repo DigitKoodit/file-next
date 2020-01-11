@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Footer from './Footer';
 import { initGA, logPageView } from '../core/analytics';
 import Header from '../components/Header';
+import { Page } from '../components/Styled/Common';
 
 type Props = {
   title?: string;
@@ -40,9 +41,12 @@ class Layout extends React.Component<Props> {
           />
         </Head>
         <Content>
-          <Header />
-          {children}
-          <Footer />
+          asdf
+          <Page>
+            <Header />
+            {children}
+            <Footer />
+          </Page>
         </Content>
       </React.Fragment>
     );

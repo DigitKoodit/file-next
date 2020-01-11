@@ -3,6 +3,7 @@ import { createClient } from 'contentful';
 const ARTICLE_TYPE: 'article' = 'article';
 
 export function createApi() {
+  console.log('Creating api', process.env);
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_TOKEN

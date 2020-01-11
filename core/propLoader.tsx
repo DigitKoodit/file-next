@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { Page } from '../components/Styled/Common';
 
 const propLoader = (Component: any, loader?: (options: any) => void) => {
   return class extends React.Component<any, any> {
@@ -12,9 +11,7 @@ const propLoader = (Component: any, loader?: (options: any) => void) => {
     render() {
       return (
         <Layout>
-          <Page>
-            <Component {...this.props} />
-          </Page>
+          <Component {...this.props} />
         </Layout>
       );
     }
