@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import Markdown from '../components/Styled/Markdown';
 import { fetchArticle } from '../core/api';
 import propLoader from '../core/propLoader';
 import { Entry } from 'contentful';
@@ -8,6 +7,7 @@ import styled from 'styled-components';
 import { Document } from '@contentful/rich-text-types';
 import { ArticleObject } from 'types';
 import Markdown from '../components/Styled/Markdown';
+// import { createClient, getEntries } from 'contentful';
 
 const sanitizeHtml = (document: Document) => {
   const contentfulHtml = documentToHtmlString(document);
@@ -25,6 +25,11 @@ interface Props {
   data: Entry<ArticleObject> | null;
 }
 
+// const client = createClient({
+//   space: process.env.CONTENTFUL_SPACE_ID,
+//   accessToken: process.env.CONTENTFUL_TOKEN
+// });
+
 const Article = (props: Props) => {
   console.log('Props', props.data);
   if (!props.data) {
@@ -35,11 +40,13 @@ const Article = (props: Props) => {
   }
   return (
     <React.Fragment>
-      <Markdown content={props.data.fields.description} />
+      <h1><Markdown content={props.data.fields.title} /></h1>
+      <b><Markdown content={props.data.fields.description} /></b>
 
       <RichHtmlBlock
         dangerouslySetInnerHTML={sanitizeHtml(props.data.fields.content)}
       />
+      {console.log(props.data.fields.content)}
     </React.Fragment>
   );
 };

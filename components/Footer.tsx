@@ -5,9 +5,10 @@ const Footer = styled.footer`
   padding: 20px;
   width: 100%;
   text-align: center;
-  max-width: 600px;
+  //max-width: 600px;
   position: fixed;
   bottom: 0px;
+  background: #dddddd;
   &:after {
     z-index: 0;
     position: absolute;

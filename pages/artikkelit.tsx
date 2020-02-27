@@ -11,11 +11,18 @@ interface Props {
 }
 
 const Short = styled.div`
+  text-align:left;
+  width: 100%;
   h3 {
     font-size: 1.3rem;
     font-family: ${fonts.serif};
     font-weight: 600;
     color: gray;
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 
   p {
@@ -76,9 +83,7 @@ const Articles: React.SFC<any> = (props: Props) => {
       />
       {filteredData.map(item => (
         <Short key={item.sys.id}>
-          <h3>{item.fields.title}</h3>
-          <p>{item.fields.description}</p>
-          <a href={`/article?id=${item.sys.id}`}>Linkki juttuun</a>
+          <a href={`/article?id=${item.sys.id}`}><h3>{item.fields.title}</h3></a> 
         </Short>
       ))}
     </React.Fragment>

@@ -39,6 +39,7 @@ class Layout extends React.Component<Props> {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         </Head>
         <Content>
           <Page>

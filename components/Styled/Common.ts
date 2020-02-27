@@ -44,6 +44,7 @@ export const Html = styled.html`
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  background: #efefef;
   & * {
     font-family: ${fonts.serif};
   }
@@ -57,6 +58,8 @@ export const Image = styled.img`
 `;
 
 export const Body = styled.body`
+overflow: visible;
+  text-decoration: none;
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
@@ -71,6 +74,7 @@ export const Body = styled.body`
   }
 
   & > div {
+    text-decoration: none;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -78,15 +82,19 @@ export const Body = styled.body`
 `;
 
 export const Page = styled.div`
+  text-decoration: none;
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  max-width: 600px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  max-width: 900px;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding-bottom: 50px;
+  background: white;
 `;
 
 export const PlaceHolder = styled.p`

@@ -6,10 +6,10 @@ import { fonts } from '../../styles/stylesheet';
 
 const Markdown = styled.div`
   ${fadeInLeft}
-  padding: 10px;
-  overflow-y: scroll;
+  overflow-y: none;
   overflow-wrap: break-word;
-  width: 100%;
+  width: 100%;¨
+  font-weight: bold; 
 
   h1,
   h2,
@@ -18,6 +18,7 @@ const Markdown = styled.div`
     opacity: 0;
     animation: fade-in-left 0.5s ease forwards;
     font-weight: 400;
+    text-decoration: none;
   }
 
   & > h2,
