@@ -83,7 +83,7 @@ export default () => (
           File
         </File>
         <SubFile>
-          Digitin, Asteriskin ja Nucleuksen ainejärjestöjulkaisu
+          Asteriskin, Digitin ja Nucleuksen ainejärjestöjulkaisu
         </SubFile>
       </FileText>
     </Title>
