@@ -44,6 +44,10 @@ const Short = styled.div`
   &:hover {
     animate: ${scale} 1s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    padding: 10px 50px 30px 30px;
+  }
 `;
 const Digit = styled(Short)`
   background: url(static/digit.svg) top right no-repeat #f7f7f7;

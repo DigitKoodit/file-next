@@ -95,6 +95,11 @@ export const Page = styled.div`
   justify-content: flex-start;
   width: 100%;
   background: white;
+
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 export const PlaceHolder = styled.p`
