@@ -43,6 +43,11 @@ const Markdown = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
+
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 interface Props {

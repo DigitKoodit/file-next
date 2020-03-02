@@ -62,6 +62,11 @@ const RichHtmlBlock = styled.section`
   flex-direction: column;
   width: 100%;
   text-align: justify;
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+  }
 `;
 
 interface Props {
