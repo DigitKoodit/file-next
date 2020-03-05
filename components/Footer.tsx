@@ -5,10 +5,10 @@ const Footer = styled.footer`
   padding: 20px;
   width: 100%;
   text-align: center;
-  //max-width: 600px;
   position: fixed;
   bottom: 0px;
-  background: #dddddd;
+  background: #DAE4E9;
+  margin-top: auto; 
   &:after {
     z-index: 0;
     position: absolute;
@@ -16,6 +16,12 @@ const Footer = styled.footer`
     left: 5px;
     right: 5px;
     top: -5px;
+  }
+
+  @media (max-width: 768px) {
+    position: relative;
+    width: calc(100% + 40px);
+    bottom: 0px;
   }
 `;
 

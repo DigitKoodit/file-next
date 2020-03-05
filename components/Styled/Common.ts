@@ -44,9 +44,11 @@ export const Html = styled.html`
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  background: #efefef;
+  background: #F3F7F9;
+  #background: #efefef;
   & * {
-    font-family: ${fonts.serif};
+    font-family: ${fonts.sans};
+    line-height: 1.5;
   }
   & * {
     box-sizing: border-box;
@@ -58,7 +60,7 @@ export const Image = styled.img`
 `;
 
 export const Body = styled.body`
-overflow: visible;
+  overflow: visible;
   text-decoration: none;
   box-sizing: border-box;
   padding: 0px;
@@ -94,11 +96,13 @@ export const Page = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  min-height: 100%;
   background: white;
 
   @media (max-width: 768px) {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 0px;
   }
 `;
 

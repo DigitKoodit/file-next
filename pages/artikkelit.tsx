@@ -31,6 +31,19 @@ const Short = styled.div`
     line-height: 1.2;
   }
 `;
+const Icon = styled.div`
+  font-family: 'Material Icons';
+  padding:5px;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  width: 50%;
+`;
+const SearchInput = styled.input`
+  padding: 5px;
+  width: 100%;
+  margin-left: 10px;
+`;
 
 function filterArticleBy(str: string) {
   const lowerCased = str.toLowerCase();
@@ -56,7 +69,7 @@ interface SearchFieldProps {
 // Very simple example filter.
 const SearchField = (props: SearchFieldProps) => {
   const { setFilter } = props;
-  return <input placeholder="Filteröi" onChange={setFilter} />;
+  return <SearchInput placeholder="Hae artikkeleista" onChange={setFilter} />;
 };
 
 const Articles: React.SFC<any> = (props: Props) => {
@@ -76,11 +89,13 @@ const Articles: React.SFC<any> = (props: Props) => {
 
   return (
     <React.Fragment>
+      <Icon>search
       <SearchField
         setFilter={(event: React.ChangeEvent<HTMLInputElement>) =>
           setFilter(event.target.value)
         }
       />
+      </Icon>
       {filteredData.map(item => (
         <Short key={item.sys.id}>
           <a href={`/article?id=${item.sys.id}`}><h3>{item.fields.title}</h3></a> 

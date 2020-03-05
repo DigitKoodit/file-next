@@ -1,13 +1,9 @@
 import * as React from 'react';
 import propLoader from '../core/propLoader';
 import { fetchFirstX } from '../core/api';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { fonts } from '../styles/stylesheet';
 
-const scale = keyframes`
-  0%: transform: scale(1.0)
-  100%: transform: scale(1.03)
-`;
 
 const ArticleLink = styled.a`
   width: 100%;
@@ -19,7 +15,8 @@ const Short = styled.div`
   text-align:left;
   width: 100%;
   background: #f7f7f7;
-  margin-bottom: 15px;
+  box-shadow: 2px 2px 5px 2px #efefef;
+  margin-bottom: 25px;
   padding: 10px 20px 20px 20px;
   border-radius: 10px 10px 10px 10px;
   h3 {
@@ -34,21 +31,73 @@ const Short = styled.div`
     color: black;
     width: 100%;
   }
-
   p {
     text-decoration: none;
-    font-family: ${fonts.serif};
+    font-family: ${fonts.sans};
     font-weight: 400;
-    line-height: 1.2;
-  }
-  &:hover {
-    animate: ${scale} 1s ease-in-out;
+    line-height: 1.5;
   }
 
   @media (max-width: 768px) {
     padding: 10px 50px 30px 30px;
   }
 `;
+const MainContainer = styled.div`
+  display: flex;
+  
+  @media (max-width: 768px) {
+    padding: 10px 50px 0px 30px;
+    text-align: left;
+  }
+`;
+const MainText = styled.div`
+  width: 100%;
+  #width: 70%;
+  align-self: start;
+  text-align: justify;
+  #margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 30px;
+
+  & p, b {
+    font-family: 'Quattrocento', serif;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px 50px 0px 30px;
+    text-align: left;
+  }
+`;
+// const FunFacts = styled.div`
+//   width: 50%;
+//   height: 100%;
+//   margin-right: -130px;
+//   border-radius: 10px 10px 10px 10px;
+//   padding-left:30px;
+//   padding-right:30px;
+//   background: #EBF1F3;
+//   & ul, li {
+//     padding-left: 20px;
+//   }
+//   & li {
+//     padding-left: 5px;
+//     font-family: 'Quattrocento', serif;
+//     font-size:1em;
+//     padding-bottom:10px;
+//   }
+// `
+
+const InstructionText = styled.div`
+  margin: 30px;
+  width: calc(100% + 250px);
+  height:100px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background: #EBF1F3;
+  display: flex;
+  align-items: center;
+`;
+
 const Digit = styled(Short)`
   background: url(static/digit.svg) top right no-repeat #f7f7f7;
   background-size: 130px 130px;
@@ -70,6 +119,41 @@ const Index: React.SFC<any> = (props: any) => {
   console.log(props);
   return (
     <React.Fragment>
+      <MainContainer>
+        <MainText>
+          <h1>File Next Generation</h1>
+          <p>
+            Jo antiikin asteriskilaiset lukivat tuota suurta ja mahtavaa paperilehteä, <b>Fileä</b>. Useita vuosia myöhemmin teknistaustaiset digittiläiset liittyivät tähän jaloon joukkoon.
+            Lukijakunta kasvoi entisestään (ei kovin paljon), kun biologisuudeltaan eroavat, tekniset taitajat nugettilaiset ottivat osaa arvokkaan lehden tuottamiseen. 
+          </p>
+          <p>
+            Paperilehden ajoista aika melkein jätti Filen, kunnes sähköisyys tarttui sisältöön ja tempaisi sen internetin syövereihin. Tästä eteenpäin Fileä julkaistakoon vain ruudulta
+            luettavassa muodossa, paitsi PilttiFileä, joka fuksipalleroiden iloksi edelleen paperisena tuotettakoon.
+          </p>
+          <p>
+            Live long and prosper.
+          </p>
+          
+        </MainText>
+        {/* <FunFacts>
+          <h3>File facts</h3>
+          <ul>
+            <li>Vuonna 1973 Asteriski ry:n tiedote julkaistiin ensimmäistä kertaa nimellä *File.</li>
+            <li>Vuonna 1978 perustettiin ensimmäistä kertaa File-toimikunta.</li>
+            <li>1980-luvulla Filen kehittyi tiedotteesta lehtiseksi, joka sisälsi myös humoristisia juttuja.</li>
+            <li>Vuonna 1989 File sai ensimmäisen kerran virallisen toimituskunnan, jossa oli 3 henkeä.</li>
+            <li>Vuonna 2000 Digit liittyi Fileen.</li>
+            <li>Vuonna 2009 Filelle tuli myös Digitin puolelta päätoimittaja.</li>
+            <li>Vuonna 2016 Nucleus liittyi Fileen. Nucleukselta tuli myös päätoimittaja.</li>
+            <li>Vuonna 2019 yhtään Fileä ei julkaistu paperisena ja 2020 Filen verkkojulkaisu saatiin ulos.</li>
+          </ul>
+        </FunFacts> */}
+      </MainContainer>
+      <InstructionText>
+        <h3>
+          Kolme uusinta artikkelia:
+        </h3>
+      </InstructionText>
       {data.map(item => (
         <ArticleLink  href={`/article?id=${item.sys.id}`}>
           {item.fields.guild == 'digit'?
@@ -96,7 +180,7 @@ const Index: React.SFC<any> = (props: any) => {
         </ArticleLink>
         
       ))}
-      {/* <p>{JSON.stringify(data, null, 2)}</p> */}
+      <br/>
     </React.Fragment>
   );
 };

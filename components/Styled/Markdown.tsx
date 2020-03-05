@@ -33,7 +33,7 @@ const Markdown = styled.div`
     opacity: 0;
     animation: fade-in-left 0.5s ease forwards;
     animation-delay: 0.2s;
-    font-family: ${fonts.serif};
+    font-family: ${fonts.sans};
   }
 
   & img {

@@ -22,10 +22,7 @@ export default class MyDocument extends Document<props> {
     return (
       <Html lang="en">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=Acme|Bree+Serif&display=swap"
-            rel="stylesheet"
-          />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quattrocento&display=swap" rel="stylesheet"/>
           {this.props.styleTags}
         </Head>
         <Body>

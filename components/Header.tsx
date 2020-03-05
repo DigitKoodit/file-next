@@ -56,7 +56,8 @@ const NavLinkContainer = styled.div`
   width: 100%;
   padding: 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #efefef;
+  box-shadow: inset 8px 8px 10px 0px #e8eff2;
+  background: #EBF1F3;
 `;
 
 const NavigationLink = styled.a`
