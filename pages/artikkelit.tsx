@@ -45,6 +45,31 @@ const SearchInput = styled.input`
   margin-left: 10px;
 `;
 
+const MainContainer = styled.div`
+  display: flex;
+  
+  @media (max-width: 768px) {
+    padding: 10px 10px 0px 10px;
+    text-align: left;
+  }
+`;
+const MainText = styled.div`
+  width: 100%;
+  align-self: start;
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 30px;
+
+  & p, b {
+    font-family: 'Quattrocento', serif;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0px;
+    text-align: left;
+  }
+`;
+
 function filterArticleBy(str: string) {
   const lowerCased = str.toLowerCase();
   return (target: Entry<ArticleObject>) => {
@@ -89,6 +114,16 @@ const Articles: React.SFC<any> = (props: Props) => {
 
   return (
     <React.Fragment>
+      <MainContainer>
+        <MainText>
+          <h1>Artikkelilistaus</h1>
+          <p>
+            Artikkeleita kertyy ajan saatossa kymmeniä, satoja, tuhansia. Jotta tulevat tulevaisuusihmiset niitä pystyisivät järjestelmällisesti 
+            selaamaan ja arkistoista dataa etsimään, niitä varten on artikkelilistaus. Hakukenttään voi syöttää sanoja tai fraaseja, jotka
+            filtteröidään juttujen otsikoista, kuvauksista ja leipätekstistä.
+          </p>          
+        </MainText>
+      </MainContainer>
       <Icon>search
       <SearchField
         setFilter={(event: React.ChangeEvent<HTMLInputElement>) =>

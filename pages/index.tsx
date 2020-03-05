@@ -46,7 +46,7 @@ const MainContainer = styled.div`
   display: flex;
   
   @media (max-width: 768px) {
-    padding: 10px 50px 0px 30px;
+    padding: 10px 10px 0px 10px;
     text-align: left;
   }
 `;
@@ -64,7 +64,7 @@ const MainText = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
-    padding: 10px 50px 0px 30px;
+    padding: 0px;
     text-align: left;
   }
 `;
@@ -96,6 +96,12 @@ const InstructionText = styled.div`
   background: #EBF1F3;
   display: flex;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    width: calc(100% + 40px);
+    padding: 10px 50px 0px 30px;
+    text-align: left;
+  }
 `;
 
 const Digit = styled(Short)`
