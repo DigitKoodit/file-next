@@ -10,9 +10,16 @@ import Markdown from '../components/Styled/Markdown';
 import { renderToStaticMarkup } from 'react-dom/server'
 // import { createClient, getEntries } from 'contentful';
 
-export const Image = styled.img`
+const Image = styled.img`
   width: 90%;
   border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  align-self: center;
+`;
+const Video = styled.div`
+  max-width: 90%;
   margin-top: 30px;
   margin-bottom: 30px;
   display: flex;
@@ -23,12 +30,14 @@ export const Image = styled.img`
 function renderMedia(file) {
   if (file.contentType === 'video/mp4') {
     return (
-      <div className='embed-responsive embed-responsive-16by9'>
-        <video controls>
-          <source src={file.url} type='video/mp4'/>
-          <p>Your browser doesnt support HTML5 video.</p>
-        </video>
-      </div>
+      <Video>
+        <div className='embed-responsive embed-responsive-16by9'>
+          <video controls>
+            <source src={file.url} type='video/mp4'/>
+            <p>Your browser doesnt support HTML5 video.</p>
+          </video>
+        </div>
+      </Video>
     )
   } else if (file.contentType === 'image/jpeg') {
     return (<Image src={file.url} />)
