@@ -77,6 +77,10 @@ const RichHtmlBlock = styled.section`
   flex-direction: column;
   width: 100%;
   text-align: justify;
+  p {
+    line-height: 1.75;
+  }
+
   @media (max-width: 768px) {
     padding-left: 10px;
     padding-right: 10px;
