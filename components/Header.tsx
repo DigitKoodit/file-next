@@ -45,6 +45,10 @@ const SubFile = styled.h2`
   font-family: Courier;
   font-size: 16px; 
   text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export interface NaviItem {
