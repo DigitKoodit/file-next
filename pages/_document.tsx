@@ -1,4 +1,4 @@
-import '../static/emptycss.css';
+import '../static/emptycss';
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
