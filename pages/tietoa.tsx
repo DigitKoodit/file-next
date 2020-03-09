@@ -15,6 +15,7 @@ const Short = styled.div`
   width: 100%;
   margin: 5px;
   padding: 10px 10px 30px 20px;
+  text-align: justify; 
   h3 {
     text-decoration: none;
     font-size: 1.3rem;
@@ -36,6 +37,9 @@ const Short = styled.div`
   }
   &:hover {
     animate: ${scale} 1s ease-in-out;
+  }
+  @media (max-width: 768px) {
+    text-align: left;
   }
 `;
 

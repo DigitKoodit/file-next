@@ -47,7 +47,7 @@ const SubFile = styled.h2`
   text-align: left;
 
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 

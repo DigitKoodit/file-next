@@ -122,7 +122,6 @@ const Nucleus = styled(Short)`
 
 const Index: React.SFC<any> = (props: any) => {
   const { data } = props;
-  console.log(props);
   return (
     <React.Fragment>
       <MainContainer>

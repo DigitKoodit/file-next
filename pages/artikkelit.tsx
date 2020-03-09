@@ -36,8 +36,10 @@ const Icon = styled.div`
   padding:5px;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.5em;
   width: 50%;
+  margin-bottom: 20px;
 `;
 const SearchInput = styled.input`
   padding: 5px;
