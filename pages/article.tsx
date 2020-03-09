@@ -18,26 +18,32 @@ const Image = styled.img`
   display: flex;
   align-self: center;
 `;
-const Video = styled.div`
+const VideoContainer = styled.div`
   max-width: 90%;
+  border-radius: 10px;
   margin-top: 30px;
   margin-bottom: 30px;
   display: flex;
   align-self: center;
 `;
 
+const Video = styled.video`
+  max-width:100%;
+  border-radius: 10px;
+`;
+
 // Returns JSX
 function renderMedia(file) {
   if (file.contentType === 'video/mp4') {
     return (
-      <Video>
+      <VideoContainer>
         <div className='embed-responsive embed-responsive-16by9'>
-          <video controls>
+          <Video controls>
             <source src={file.url} type='video/mp4'/>
             <p>Your browser doesnt support HTML5 video.</p>
-          </video>
+          </Video>
         </div>
-      </Video>
+      </VideoContainer>
     )
   } else if (file.contentType === 'image/jpeg') {
     return (<Image src={file.url} />)
