@@ -1,8 +1,8 @@
+import '../static/emptycss.css';
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { Html, Body } from '../components/Styled/Common';
-import  { empty } from '../components/Styled/emptycss';
 
 interface props {
   styleTags: any;
