@@ -2,6 +2,7 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { Html, Body } from '../components/Styled/Common';
+import emptycss from './static/emptycss.css';
 
 interface props {
   styleTags: any;
