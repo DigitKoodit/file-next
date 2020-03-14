@@ -9,6 +9,7 @@ const ArticleLink = styled.a`
   width: 100%;
   text-decoration: none;
   color: black;
+  margin-bottom: 25px;
 `;
 const Short = styled.div`
   overflow: none;
@@ -16,7 +17,6 @@ const Short = styled.div`
   width: 100%;
   background: #f7f7f7;
   box-shadow: 2px 2px 5px 2px #efefef;
-  margin-bottom: 25px;
   padding: 10px 20px 20px 20px;
   border-radius: 10px 10px 10px 10px;
   h3 {

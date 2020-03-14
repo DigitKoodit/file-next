@@ -33,7 +33,7 @@ const Short = styled.div`
     text-decoration: none;
     font-family: ${fonts.serif};
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.7;
   }
   &:hover {
     animate: ${scale} 1s ease-in-out;

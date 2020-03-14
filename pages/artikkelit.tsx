@@ -10,27 +10,48 @@ interface Props {
   data: Entry<ArticleObject>[];
 }
 
+const ArticleLink = styled.a`
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 25px;
+`;
+
 const Short = styled.div`
+  overflow: none;
   text-align:left;
   width: 100%;
+  background: #f7f7f7;
+  box-shadow: 2px 2px 5px 2px #efefef;
+  padding: 10px 30px;
+  border-radius: 10px 10px 10px 10px;
   h3 {
+    text-decoration: none;
     font-size: 1.3rem;
     font-family: ${fonts.serif};
     font-weight: 600;
     color: gray;
-    text-decoration: none;
   }
   a {
     text-decoration: none;
     color: black;
+    width: 100%;
+  }
+  p {
+    text-decoration: none;
+    font-family: ${fonts.sans};
+    font-weight: 400;
+    line-height: 1.5;
   }
 
-  p {
-    font-family: ${fonts.serif};
-    font-weight: 400;
-    line-height: 1.2;
+  @media (max-width: 768px) {
+    padding: 10px 30px;
+    h3 {
+      font-size: 1em;
+    }
   }
 `;
+
 const Icon = styled.div`
   font-family: 'Material Icons';
   padding:5px;
@@ -134,9 +155,11 @@ const Articles: React.SFC<any> = (props: Props) => {
       />
       </Icon>
       {filteredData.map(item => (
+        <ArticleLink  href={`/article?id=${item.sys.id}`}> 
         <Short key={item.sys.id}>
-          <a href={`/article?id=${item.sys.id}`}><h3>{item.fields.title}</h3></a> 
+          <h3>{item.fields.title}</h3> 
         </Short>
+        </ArticleLink>
       ))}
     </React.Fragment>
   );
