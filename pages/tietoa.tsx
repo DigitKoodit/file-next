@@ -54,19 +54,27 @@ const Index: React.SFC<any> = (props: any) => {
           Mukana on myös opetushenkilökunnan ja yhteistyöyritysten edustajien haastatteluja. Julkaisuun mahtuu tosin kaikkea muutakin.
         </p>
         <p>
-          Aiemmin File-lehti ilmestyi nelisen kertaa vuodessa.
-          Keväällä putkahti ulos pari numeroa ja syksyllä File ilahdutti lukijoitaan samaten kahdesti. Kesän korvilla julkaistiin myös Piltti-File uusille 
+          Aiemmin File-lehti ilmestyi neljä kertaa vuodessa. Keväällä putkahti ulos pari numeroa ja syksyllä 
+          File ilahdutti lukijoitaan samaten kahdesti. Kesän korvilla julkaistiin myös Piltti-File uusille 
           informaatioteknologian laitoksen ja biotekniikan koulutusohjelman opiskelijoille.
         </p>
         <p>
-          Filen toimittamisesta vastaa vapaaehtoisista koottu toimikunta. 
-          Toimikuntaa johtavat rautaisella otteellaan päätoimittajat, joista yksi toimii usein 
-          myös lehden taittajana. Päätoimittajat valitaan sekä Digitistä, 
-          Nucleuksesta että Asteriskista, ja sisäinen työnjako sovitaan vuosittain. 
-          Toimikunta valitaan aina vuodeksi kerrallaan ja valinnat tehdään Digitin, Nucleuksen ja Asteriskin syyskokouksissa. 
-          Myös sinä voit osallistua toimikunnan työhön. Jos olet siis edes jossain määrin 
-          kiinnostunut kirjoittamaan juttuja, haastattelemaan sitä mukavaa assaria tai ottamaan lehteen 
-          sopivia valokuvia niin olet ehdottomasti tervetullut toimikuntaan mukaan!
+          Nykyään Filen toiminta on vapaampaa eikä ole rajoittunut tarkkoihin kalenteriaikatauluihin julkaisutahdin suhteen. 
+          Juttuja kerätään ympäri vuoden, julkaisut tehdään mahdollisimman pian ja somen avulla markkinointi tavoittaa huomattavasti
+          suuremman määrän lukijoita kuin aiempi 60 lehden levikki. Juttuja voi lukea mistä vain ja milloin vain hakematta konkreettista 
+          lehteä järjestöjen tiloista. Toiminta on siis muodikkaasti ketterämpää. 
+        </p>
+        <p>
+          Filen toimittamisesta vastaa rautaisella otteellaan päätoimittajat, joista yksi toimii usein 
+          myös PilttiFilen taittajana. Päätoimittajat valitaan sekä Digitistä, 
+          Nucleuksesta että Asteriskista, ja sisäinen työnjako sovitaan vuosittain. Mutta myös sinä voit osallistua julkaisun tuottamiseen! 
+          Jos olet edes jossain määrin kiinnostunut kirjoittamaan juttuja, haastattelemaan sitä mukavaa assaria tai ottamaan julkaisuun 
+          sopivia valokuvia, olet ehdottomasti tervetullut toimintaan mukaan!
+        </p>
+        <p>
+          Sporttiset julkasun tekijät ottakee yhteyttä,<br/>
+          <i>Tatu Heinonen<br/>
+          sukunimi.etunimi@gmail.com</i>
         </p>
       </Short>
     </React.Fragment>

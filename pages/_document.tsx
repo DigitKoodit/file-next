@@ -10,15 +10,29 @@ interface props {
 
 // Document component is strongly typed with `@types/next`
 export default class MyDocument extends Document<props> {
-  static async getInitialProps({ renderPage }: any) {
+  static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
     
-    const page = await renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
-    );
-    const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags };
-    
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        });
+      const initialProps = await Document.getInitialProps(ctx);
+
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        )
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
