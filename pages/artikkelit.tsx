@@ -45,11 +45,27 @@ const Short = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 10px 30px;
+    padding: 10px 70px 10px 30px;
     h3 {
       font-size: 1em;
     }
   }
+`;
+
+const Digit = styled(Short)`
+  background: url(static/digit.svg) top right no-repeat #f7f7f7;
+  background-size: 130px 130px;
+  //background: linear-gradient(135deg, rgba(247,247,247,1) 0%, rgba(251,255,201,1) 100%);
+`;
+const Asteriski = styled(Short)`
+  background: url(static/asteriski.svg) top right no-repeat #f7f7f7;
+  background-size: 130px 130px;
+  //background: linear-gradient(135deg, rgba(247,247,247,1) 0%, rgba(233,255,213,1) 100%);
+`;
+const Nucleus = styled(Short)`
+  background: url(static/nucleus.svg) top right no-repeat #f7f7f7;
+  background-size: 130px 130px;
+  //background: linear-gradient(135deg, rgba(247,247,247,1) 0%, rgba(224,225,255,1) 100%);
 `;
 
 const Icon = styled.div`
@@ -155,10 +171,24 @@ const Articles: React.SFC<any> = (props: Props) => {
       />
       </Icon>
       {filteredData.map(item => (
-        <ArticleLink  href={`/article?id=${item.sys.id}`}> 
-        <Short key={item.sys.id}>
-          <h3>{item.fields.title}</h3> 
-        </Short>
+        <ArticleLink  href={`/article?id=${item.sys.id}`}>
+          {item.fields.guild == 'digit'?
+            <Digit key={item.sys.id}>
+              <h3>{item.fields.title}</h3>
+            </Digit> 
+          : item.fields.guild == 'asteriski' ?
+            <Asteriski key={item.sys.id}>
+              <h3>{item.fields.title}</h3>
+            </Asteriski>
+          :  item.fields.guild == 'nucleus' ?
+            <Nucleus key={item.sys.id}>
+              <h3>{item.fields.title}</h3>
+            </Nucleus>
+          :
+            <Short key={item.sys.id}>
+              <h3>{item.fields.title}</h3>
+            </Short>
+          }
         </ArticleLink>
       ))}
     </React.Fragment>
