@@ -3,12 +3,12 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { Html, Body } from '../components/Styled/Common';
 
-interface props {
-  styleTags: any;
-}
+// interface props {
+//   styleTags: any;
+// }
 
 // Document component is strongly typed with `@types/next`
-export default class MyDocument extends Document<props> {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -39,7 +39,7 @@ export default class MyDocument extends Document<props> {
       <Html lang="en">
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quattrocento&display=swap" rel="stylesheet"/>
-          {this.props.styleTags}
+          {/* {this.props.styleTags} */}
         </Head>
         <Body>
           <Main />
