@@ -112,7 +112,7 @@ const MainText = styled.div`
 function filterArticleBy(str: string) {
   const lowerCased = str.toLowerCase();
   return (target: Entry<ArticleObject>) => {
-    const { content, description, title } = target.fields;
+    const { content, description, title, guild } = target.fields;
     if (!str) return true;
     // This is a bit of a cheat to read the deep contentful-data.
     const stringifiedContent = content && JSON.stringify(content);
@@ -121,7 +121,8 @@ function filterArticleBy(str: string) {
     return (
       stringifiedContent.indexOf(lowerCased) !== -1 ||
       (description && description.toLowerCase().indexOf(lowerCased)) !== -1 ||
-      (title && title.toLowerCase().indexOf(lowerCased)) !== -1
+      (title && title.toLowerCase().indexOf(lowerCased)) !== -1 ||
+      (guild && guild.toLowerCase().indexOf(lowerCased)) !== -1
     );
   };
 }
@@ -159,7 +160,7 @@ const Articles: React.SFC<any> = (props: Props) => {
           <p>
             Artikkeleita kertyy ajan saatossa kymmeniä, satoja, tuhansia. Jotta tulevat tulevaisuusihmiset niitä pystyisivät järjestelmällisesti 
             selaamaan ja arkistoista dataa etsimään, niitä varten on artikkelilistaus. Hakukenttään voi syöttää sanoja tai fraaseja, jotka
-            filtteröidään juttujen otsikoista, kuvauksista ja leipätekstistä.
+            filtteröidään juttujen otsikoista, kuvauksista ja leipätekstistä. Myös killan nimellä voi hakea, jolloin kaikki killan jutut näytetään.
           </p>          
         </MainText>
       </MainContainer>

@@ -20,6 +20,7 @@ type HttpRequestStatus = 'PENDING' | 'FULFILLED' | 'REJECTED' | '';
 
 declare interface ArticleObject {
   id: string;
+  guild: string;
   title: string;
   description: string;
   content: Document;
