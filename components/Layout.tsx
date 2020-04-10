@@ -4,12 +4,36 @@ import styled from 'styled-components';
 import Footer from './Footer';
 import { initGA, logPageView } from '../core/analytics';
 import Header from '../components/Header';
-import { Page } from '../components/Styled/Common';
+
+//import { Page } from '../components/Styled/Common';
 
 type Props = {
   title?: string;
   children: any;
 };
+
+export const Page = styled.div`
+  text-decoration: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  max-width: 900px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100%;
+  background: white;
+
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+  }
+`;
 
 const Content = styled.section`
   display: flex;

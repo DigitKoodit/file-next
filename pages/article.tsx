@@ -8,71 +8,8 @@ import { Document } from '@contentful/rich-text-types';
 import { ArticleObject } from 'types';
 import Markdown from '../components/Styled/Markdown';
 import { renderToStaticMarkup } from 'react-dom/server'
-import { fonts } from '../styles/stylesheet';
 
 // import { createClient, getEntries } from 'contentful';
-
-export const Html = styled.html`
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
-  background: #F3F7F9;
-  #background: #efefef;
-  & * {
-    font-family: ${fonts.sans};
-    line-height: 1.5;
-  }
-  & * {
-    box-sizing: border-box;
-  }
-`;
-
-export const Body = styled.body`
-  overflow: visible;
-  text-decoration: none;
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-
-  & * {
-    box-sizing: border-box;
-  }
-
-  & > div {
-    text-decoration: none;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-export const Page = styled.div`
-  text-decoration: none;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 20px;
-  padding-bottom: 100px;
-  max-width: 900px;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  min-height: 100%;
-  background: white;
-
-  @media (max-width: 768px) {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 0px;
-  }
-`;
 
 const Image = styled.img`
   width: 90%;
