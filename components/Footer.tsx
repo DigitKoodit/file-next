@@ -5,18 +5,8 @@ const Footer = styled.footer`
   padding: 20px;
   width: 100%;
   text-align: center;
-  position: fixed;
-  bottom: 0px;
+  position: relative;
   background: #DAE4E9;
-  margin-top: auto; 
-  &:after {
-    z-index: 0;
-    position: absolute;
-    content: '';
-    left: 5px;
-    right: 5px;
-    top: -5px;
-  }
 
   @media (max-width: 768px) {
     position: relative;

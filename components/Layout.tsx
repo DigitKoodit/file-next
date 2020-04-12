@@ -11,33 +11,24 @@ export const fonts = {
 };
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
   background: #F3F7F9;
   font-family: ${fonts.sans};
   line-height: 1.5;
-  * {
-    box-sizing: border-box;
-  }
-`;
-
-
-export const ContainerBody = styled.div`
   text-decoration: none;
   padding: 0px;
   margin: 0px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   overflow: auto;
-  display: flex;
-  flex-direction: column;
 
-  & > div {
-    text-decoration: none;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  * {
+    box-sizing: border-box;
   }
 `;
 
@@ -47,19 +38,19 @@ type Props = {
 };
 
 export const Page = styled.div`
+  margin: 0 auto;
   text-decoration: none;
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 20px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   max-width: 900px;
+  height: 100%;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  min-height: 100%;
   background: white;
 
   @media (max-width: 768px) {
@@ -67,14 +58,6 @@ export const Page = styled.div`
     padding-right: 20px;
     padding-bottom: 0px;
   }
-`;
-
-const Content = styled.section`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-contents: center;
 `;
 
 class Layout extends React.Component<Props> {
@@ -93,15 +76,11 @@ class Layout extends React.Component<Props> {
           <title>File-lehti</title>
         </Head>
         <Container>
-          <ContainerBody>
-            <Content>
-              <Page>
-                <Header />
-                {children}
-                <Footer />
-              </Page>
-            </Content>
-          </ContainerBody>
+          <Page>
+            <Header />
+            {children}
+          </Page>
+          <Footer />
         </Container>
       </>
     );

@@ -7,8 +7,12 @@ interface props {
   styleTags: any;
 }
 
+const fullPage = {
+  height: '100%', 
+  width: '100%',
+  margin: 0
+}
 
-// Document component is strongly typed with `@types/next`
 export default class MyDocument extends Document<props> {
   static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet();
@@ -24,7 +28,7 @@ export default class MyDocument extends Document<props> {
 
   render() {
     return (
-      <html lang="fi">
+      <html lang="fi" style={fullPage}>
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap" rel="stylesheet" />
           {this.props.styleTags}
@@ -35,7 +39,7 @@ export default class MyDocument extends Document<props> {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <body>
+        <body style={fullPage}>
           <Main />
           <NextScript />
         </body>
