@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import Search from '@material-ui/icons/Search'
 import propLoader from '../core/propLoader';
 import { fetchAllArticles } from '../core/api';
 import styled from 'styled-components';
@@ -68,8 +69,7 @@ const Nucleus = styled(Short)`
   //background: linear-gradient(135deg, rgba(247,247,247,1) 0%, rgba(224,225,255,1) 100%);
 `;
 
-const Icon = styled.div`
-  font-family: 'Material Icons';
+const SearchBar = styled.div`
   padding:5px;
   display: flex;
   align-items: center;
@@ -164,13 +164,14 @@ const Articles: React.SFC<any> = (props: Props) => {
           </p>          
         </MainText>
       </MainContainer>
-      <Icon>search
+      <SearchBar>
+      <Search />
       <SearchField
         setFilter={(event: React.ChangeEvent<HTMLInputElement>) =>
           setFilter(event.target.value)
         }
       />
-      </Icon>
+      </SearchBar>
       {filteredData.map(item => (
         <ArticleLink  href={`/article?id=${item.sys.id}`}>
           {item.fields.guild == 'digit'?

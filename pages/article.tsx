@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { fetchArticle } from '../core/api';
 import propLoader from '../core/propLoader';
 import { Entry } from 'contentful';
