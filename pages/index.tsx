@@ -95,6 +95,10 @@ const InstructionText = styled.div`
   background: #EBF1F3;
   display: flex;
   align-items: center;
+
+  @media (max-width: 900px) {
+    width: calc(100% + 200px);
+  }
   
   @media (max-width: 768px) {
     width: calc(100% + 40px);

@@ -10,7 +10,7 @@ const Footer = styled.footer`
 
   @media (max-width: 768px) {
     position: relative;
-    width: calc(100% + 40px);
+    width: 100%;
     bottom: 0px;
   }
 `;
