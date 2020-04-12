@@ -1,57 +1,12 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import styled from 'styled-components';
-
-//import { Html, Body } from '../components/Styled/Common';
+import 'typeface-open-sans'
 
 interface props {
   styleTags: any;
 }
 
-export const fonts = {
-  sans: 'Open Sans, sans-serif',
-  serif: 'Open Sans, serif',
-};
-
-export const Html = styled.html`
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
-  background: #F3F7F9;
-  #background: #efefef;
-  & * {
-    font-family: ${fonts.sans};
-    line-height: 1.5;
-  }
-  & * {
-    box-sizing: border-box;
-  }
-`;
-
-export const Body = styled.body`
-  overflow: visible;
-  text-decoration: none;
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-
-  & * {
-    box-sizing: border-box;
-  }
-
-  & > div {
-    text-decoration: none;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-`;
 
 // Document component is strongly typed with `@types/next`
 export default class MyDocument extends Document<props> {
@@ -61,21 +16,30 @@ export default class MyDocument extends Document<props> {
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
     // Extract the styles as <style> tags. Output the styles in the <Head>
     const styleTags = sheet.getStyleElement();
+    if(!page || !sheet || !styleTags) {
+      return console.log('shii')
+    }
     return { ...page, styleTags };
   }
 
   render() {
     return (
-      <Html lang="en">
+      <html lang="fi">
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quattrocento&display=swap" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap" rel="stylesheet" />
           {this.props.styleTags}
+          <link rel="shortcut icon" href="static/icon.svg" />
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
         </Head>
-        <Body>
+        <body>
           <Main />
           <NextScript />
-        </Body>
-      </Html>
+        </body>
+      </html>
     );
   }
 }

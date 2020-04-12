@@ -5,7 +5,41 @@ import Footer from './Footer';
 import { initGA, logPageView } from '../core/analytics';
 import Header from '../components/Header';
 
-//import { Page } from '../components/Styled/Common';
+export const fonts = {
+  sans: 'Open Sans, sans-serif',
+  serif: 'Open Sans, serif',
+};
+
+export const Container = styled.div`
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  background: #F3F7F9;
+  font-family: ${fonts.sans};
+  line-height: 1.5;
+  * {
+    box-sizing: border-box;
+  }
+`;
+
+
+export const ContainerBody = styled.div`
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    text-decoration: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 type Props = {
   title?: string;
@@ -54,25 +88,22 @@ class Layout extends React.Component<Props> {
   render() {
     const { children } = this.props;
     return (
-      <React.Fragment>
+      <>
         <Head>
           <title>File-lehti</title>
-          <link rel="shortcut icon" href="static/icon.svg" />
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         </Head>
-        <Content>
-          <Page>
-            <Header />
-            {children}
-            <Footer />
-          </Page>
-        </Content>
-      </React.Fragment>
+        <Container>
+          <ContainerBody>
+            <Content>
+              <Page>
+                <Header />
+                {children}
+                <Footer />
+              </Page>
+            </Content>
+          </ContainerBody>
+        </Container>
+      </>
     );
   }
 }
