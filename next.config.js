@@ -1,8 +1,9 @@
 const withOffline = require('next-offline');
+const withCSS = require('@zeit/next-css')
 const webpack = require('webpack');
 require('dotenv').config();
 
-module.exports = withOffline({
+module.exports = withCSS(withOffline({
   webpack: config => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
@@ -12,4 +13,4 @@ module.exports = withOffline({
     config.plugins.push(new webpack.DefinePlugin(env));
     return config;
   }
-});
+}));

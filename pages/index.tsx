@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import propLoader from '../core/propLoader';
 import { fetchFirstX } from '../core/api';
 import styled from 'styled-components';

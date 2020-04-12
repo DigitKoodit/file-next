@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import propLoader from '../core/propLoader';
 import { fetchFirstX } from '../core/api';
 import styled, { keyframes } from 'styled-components';
@@ -6,7 +6,7 @@ import { fonts } from '../styles/stylesheet';
 
 const scale = keyframes`
   0%: transform: scale(1.0)
-  100%: transform: scale(1.03)
+  100%: transform: scale
 `;
 
 const Short = styled.div`

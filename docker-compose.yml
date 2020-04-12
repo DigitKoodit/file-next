@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nextjs:
+    build: ./
+    entrypoint: pm2-runtime
+    command: ["npm", "--", "start" ]
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80

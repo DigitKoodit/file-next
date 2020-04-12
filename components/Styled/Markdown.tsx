@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import marked from 'marked';
 import { fadeInLeft } from './Common';
@@ -9,7 +9,7 @@ const Markdown = styled.div`
   overflow-y: none;
   overflow-wrap: break-word;
   width: 100%;¨
-  font-weight: bold; 
+  font-weight: bold;font-weight 
 
   h1,
   h2,

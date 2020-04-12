@@ -1,5 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import HomeIcon from '@material-ui/icons/Home'
+import MenuBookIcon from '@material-ui/icons/MenuBook'
+import InfoIcon from '@material-ui/icons/Info'
 import { Image } from './Styled/Common';
 //import { fonts } from '../styles/stylesheet';
 
@@ -53,7 +56,7 @@ const SubFile = styled.h2`
 
 export interface NaviItem {
   href: string;
-  label: string;
+  Label: any;
   divider?: string;
 }
 const NavLinkContainer = styled.div`
@@ -65,23 +68,22 @@ const NavLinkContainer = styled.div`
 `;
 
 const NavigationLink = styled.a`
-  padding: 1rem;
+  display: inline-block;
+  margin: 1rem;
   color: black;
-  font-family: 'Material Icons';
-  text-decoration: none;
-  font-size: 48px;
+  vertical-align: text-top;
 `;
 
 
 const naviTree: NaviItem[] = [
-  { href: '/index', label: 'home' },
-  { href: '/artikkelit', label: 'menu_book' }, 
-  { href: '/tietoa', label: 'info' }
+  { href: '/index', Label: HomeIcon },
+  { href: '/artikkelit', Label: MenuBookIcon },
+  { href: '/tietoa', Label: InfoIcon }
 ];
 
 export default () => (
   <Header>
-    <Title className="logo"> 
+    <Title className="logo">
       <Logo src="static/logo.svg" alt="logo" />
       <FileText>
         <File>
@@ -92,11 +94,11 @@ export default () => (
         </SubFile>
       </FileText>
     </Title>
-    <br/>
+    <br />
     <NavLinkContainer>
       {naviTree.map(item => (
-        <NavigationLink href={item.href} key={item.label}>
-          {item.label}
+        <NavigationLink href={item.href} key={item.href}>
+          <item.Label style={{ fontSize: '3rem' }} />
         </NavigationLink>
       ))}
     </NavLinkContainer>
