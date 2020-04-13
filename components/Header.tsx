@@ -35,6 +35,7 @@ const Logo = styled(Image)`
   width: 20%;
   display: flex;
   align-self: center;
+  fill: red;
 `;
 
 const File = styled.h2`
