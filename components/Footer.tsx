@@ -16,5 +16,5 @@ const Footer = styled.footer`
 `;
 
 export default () => (
-  <Footer>Copyright Asteriski ry, Digit ry, Nucleus ry, 2019</Footer>
+  <Footer>Copyright Asteriski ry, Digit ry, Nucleus ry, 2020</Footer>
 );
