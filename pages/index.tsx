@@ -159,7 +159,7 @@ const Index: React.SFC<any> = (props: any) => {
       </MainContainer>
       <InstructionText>
         <h3>
-          Kolme uusinta artikkelia:
+          Viisi uusinta artikkelia:
         </h3>
       </InstructionText>
       {data.map(item => (
@@ -193,4 +193,4 @@ const Index: React.SFC<any> = (props: any) => {
   );
 };
 
-export default propLoader(Index, fetchFirstX(3));
+export default propLoader(Index, fetchFirstX(5));
