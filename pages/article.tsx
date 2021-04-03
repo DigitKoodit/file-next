@@ -81,6 +81,12 @@ const RichHtmlBlock = styled.section`
   p {
     line-height: 1.75;
   }
+  hr {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    width:100%;
+  }
 
   @media (max-width: 768px) {
     padding-left: 10px;
